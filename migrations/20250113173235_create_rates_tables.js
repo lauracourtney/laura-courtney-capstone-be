@@ -7,10 +7,6 @@ export function up(knex) {
     table.increments("id").primary();
     table.timestamp("dates").notNullable();
     table.integer("rates").notNullable();
-    // table.timestamp("created_at").defaultTo(knex.fn.now());
-    // table
-    //   .timestamp("updated_at")
-    //   .defaultTo(knex.raw("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"));
   });
 }
 
@@ -18,6 +14,7 @@ export function up(knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
+
 export function down(knex) {
   return knex.schema.dropTable("rates");
 }
